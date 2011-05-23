@@ -1,0 +1,23 @@
+---
+name: MooseX-Role-ConstructorRoleApplication
+version: 0.01
+author:
+  - 'Fraser Tweedale <frasert@jumbolotteries.com>'
+abstract: apply roles during construction
+license: perl
+build_requires:
+  Test::More: 0
+requires:
+  Moose: 0
+configure_requires:
+  Module::Build: 0.340201
+generated_by: Module::Build version 0.340201
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+provides:
+  MooseX::Role::ConstructorRoleApplication:
+    file: lib/MooseX/Role/ConstructorRoleApplication.pm
+    version: 0.01
+resources:
+  license: http://dev.perl.org/licenses/

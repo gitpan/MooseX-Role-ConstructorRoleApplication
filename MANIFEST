@@ -1,0 +1,13 @@
+Build.PL
+Changes
+INSTALL
+lib/MooseX/Role/ConstructorRoleApplication.pm
+Makefile.PL
+MANIFEST
+README
+t/00-load.t
+t/manifest.t
+t/MooseX::Role::ConstructorRoleApplication.t
+t/pod-coverage.t
+t/pod.t
+META.yml
