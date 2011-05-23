@@ -9,11 +9,11 @@ MooseX::Role::ConstructorRoleApplication - apply roles during construction
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -24,9 +24,9 @@ Perhaps a little code snippet.
 
     package Foo;
     use Moose;
-    with 'Ozlotteries::Role::ConstructorRoleApplication';
+    with 'MooseX::Role::ConstructorRoleApplication';
 
-    # apply My::Role and My::OtherRole to instances of foo
+    # construct a Foo that also does My::Role and My::OtherRole
     my $foo = Foo->new(apply => ['My::Role', 'My::OtherRole']);
 
 
