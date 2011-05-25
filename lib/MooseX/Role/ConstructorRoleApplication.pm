@@ -9,11 +9,11 @@ MooseX::Role::ConstructorRoleApplication - apply roles right after construction
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 =head1 SYNOPSIS
@@ -35,16 +35,19 @@ new instance.
 It does not apply the roles to the class itself, so other instances
 may be constructed I<without> the roles.
 
-This role is similar in purpose to L<MooseX::Traits> but composes roles into
+This role is similar in purpose to L<MooseX::Traits> but applies roles into
 the class instance immediately after construction, rather than creating an
 anonymous class before the new object is instantiated.
 
-The advantage of this module over
-C<MooseX::Traits> module is that role application is accomplished with a
-single call to C<new>.  Use C<MooseX::Role::ConstructorRoleApplication> if
-you're a fan of L<Test::More>'s C<new_ok> or for other reasons require a
-single call to C<new> rather than a chain of calls (as would be necessary
-with C<MooseX::Traits>).  Otherwise, use C<MooseX::Traits>.
+The advantage of this module over C<MooseX::Traits> module is the role
+application is accomplished with a single call to C<new>, the invocant being
+the original class rather than an anonymous class.  This allows use with,
+e.g., L<Test::More>'s C<new_ok>, and is the only reason to prefer this module
+over C<MooseX::Traits> of which the author is aware.
+
+C<MooseX::Traits> does provide a C<new_with_traits> class method if you
+wish to accomplish role application and construction in a single call in
+your own code.
 
    # using MooseX::Role::ConstructorRoleApplication
    my $obj = Class->new(apply=>['Role']);
@@ -52,7 +55,7 @@ with C<MooseX::Traits>).  Otherwise, use C<MooseX::Traits>.
    # using MooseX::Traits
    my $obj = Class->with_traits('Role')->new;
 
-Of course, when using C<MooseX::Role::ConstructorRoleApplication>, you
+Of course, if using C<MooseX::Role::ConstructorRoleApplication>, you
 cannot supply to the constructor values for attributes provided by the
 role (or roles) that are yet to be applied.  Such values must be set
 after the object is instantiated.  Some mechanism to set role attributes
@@ -126,7 +129,7 @@ L<http://search.cpan.org/dist/MooseX-Role-ConstructorRoleApplication/>
 =head1 SEE ALSO
 
 L<MooseX::Traits> is a module similar in purpose that performs role
-performs role composition prior to, rather than after, instantiation.
+performs role application prior to, rather than after, instantiation.
 In most cases, a better choice than this module.
 
 

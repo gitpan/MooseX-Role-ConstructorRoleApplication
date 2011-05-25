@@ -1,5 +1,8 @@
 Revision history for MooseX-Role-ConstructorRoleApplication
 
+0.04    20110525
+        POD updates; improve CRA v MooseX::Traits discussion
+
 0.03    20110524
         POD updates; explain differences between CRA and MooseX::Traits
 

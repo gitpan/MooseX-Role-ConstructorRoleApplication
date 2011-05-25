@@ -1,6 +1,6 @@
 ---
 name: MooseX-Role-ConstructorRoleApplication
-version: 0.03
+version: 0.04
 author:
   - 'Fraser Tweedale <frasert@jumbolotteries.com>'
 abstract: apply roles right after construction
@@ -18,6 +18,6 @@ meta-spec:
 provides:
   MooseX::Role::ConstructorRoleApplication:
     file: lib/MooseX/Role/ConstructorRoleApplication.pm
-    version: 0.03
+    version: 0.04
 resources:
   license: http://dev.perl.org/licenses/
